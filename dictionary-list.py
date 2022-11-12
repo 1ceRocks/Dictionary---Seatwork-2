@@ -18,3 +18,6 @@
 # - Your program should be uploaded to github before 4pm
 # - Record a demo presenting your program
 # - Send the demo or link of demo directly to my messenger
+
+# first and foremost, let's make a dictionary list for creating a stored value data within user input for back-end programming.
+personalData = {}
