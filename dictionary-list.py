@@ -25,16 +25,16 @@ personalData = {
 }
 
 while True: #re-arranged the program with the while loop scenario (implementing option [3])
-    os.system("cls")
     print("Your Dictionary List"); print("Selection Menu") 
     print("1 -> Add an item")
     print("2 -> Search")
     print("3 -> Exit (y/n)")
     time.sleep(1)
-    usr_Input = int(input("What program menu do you want to do? (1 / 2 / 3)\n\nYour answer here: "))
+    usr_Input = int(input("\nWhat program menu do you want to do? (1 / 2 / 3)\n\nYour answer here: "))
     if usr_Input == 1:
+        os.system('cls')
         print("Selecting No.1 would automatically create a new database for you stored on the main personalData - Contact Tracing")
-        key_ID = str(input("Enter the name to be used as data storage (dictionary)\n\nYour answer here: "))
+        key_ID = str(input("Enter the name to be used as data storage (dictionary)\n\nYour answer here: ")); key_ID.title()
         # user input for the main info
         usr_valName = str(input("\n\nFull Name: ")) 
         usr_valSex = str(input("\nYour Sex (M / F): ")) 
@@ -50,23 +50,28 @@ while True: #re-arranged the program with the while loop scenario (implementing 
         # this function increments a new database dictionary inside the personalData main dictionary
         personalData[key_ID] = {f"Full Name" : usr_valName, "Sex" : usr_valSex, "Birthday" : usr_valBD, "Age" : usr_valAge, "Sex" : usr_valSex, "Address" : usr_valAdd, "Phone Number" : usr_valPN, "E-Mail Address" : usr_valEA, "Civil Status" : usr_valCS, "Nationality" : usr_valNN, "COVID-19 Vaccination Status" : usr_valVac, "Comorbidity" : usr_valRate}
         # program nested dictionary is now updated, appended, and is working.
-        print("Your Contact-Tracing Information has been saved.")
 
-    if usr_Input == 2:
-        var_Access = input("Enter the dictionary name you want to access the data from\n\nYour answer here: ")
-        print(personalData[key_ID]["Full Name"])
-        print(personalData[key_ID]["Sex"])
-        print(personalData[key_ID]["Address"])
-        print(personalData[key_ID]["Phone Number"])
-        print(personalData[key_ID]["E-Mail Address"])
-        print(personalData[key_ID]["Civil Status"])
-        print(personalData[key_ID]["Nationality"])
-        print(personalData[key_ID]["COVID-19 Vaccination Status"])
-        print(personalData[key_ID]["Comorbidity"])
+        print(f"Your Contact-Tracing Information named " + key_ID + " has been saved.\nPlease do not forget your child dictionary name as you might not access the info you stored without prior dictionary naming.")
+
+    if usr_Input == 2: # option 2 completed with print() function
+        var_Access = input(f"Enter the dictionary name you want to access the data from\n\nYour answer here: "); var_Access.title()
+        os.system('cls')
+        print(f"The stored data for " + {var_Access} + " has now been assessed.\n")
+        print(f"Full Name: " + personalData[var_Access]["Full Name"])
+        print(f"Sex: " + personalData[var_Access]["Sex"])
+        print(f"Birthday: " + personalData[var_Access]["Birthday"])
+        print(f"Age: " + personalData[var_Access]["Age"])
+        print(f"Address: " + personalData[var_Access]["Address"])
+        print(f"Phone Number: " + personalData[var_Access]["Phone Number"])
+        print(f"E-Mail Address: " + personalData[var_Access]["E-Mail Address"])
+        print(f"Nationality: " + personalData[var_Access]["Nationality"])
+        print(f"Civil Status: " + personalData[var_Access]["Civil Status"])
+        print(f"COVID-19 Vaccination Status: " + personalData[var_Access]["COVID-19 Vaccination Status"])
+        print(f"Comorbidity: " + {personalData[var_Access]["Comorbidity"]})
 
     if usr_Input == 3:
         usr_Ask = input("Do you wish to continue? (y/n)\n\nYour answer here: ")
-        if usr_Ask == "y" or "yes":
+        if usr_Ask == "y":
             continue;
-        elif usr_Ask == "n" or "no":
+        elif usr_Ask == "n":
             break;
