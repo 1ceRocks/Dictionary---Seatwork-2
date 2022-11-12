@@ -44,13 +44,14 @@ os.system("cls")
 usr_Input = int(input("What program menu do you want to do? (1 / 2 / 3)\n\nYour answer here: ")) # this would be the user-input for selecting between 1 , 2 , or 3.
 if usr_Input == 1:
     print("Selecting No.1 would automatically create a new database for you stored on the main personalData - Contact Tracing")
-    key_ID = input("Enter your name to be used as data storage (dictionary)\n\nYour answer here: ")
-    key_ID = [] # Empty list for indexing parameters to be used in nested dictionary
+    key_ID = str(input("Enter your name to be used as data storage (dictionary)\n\nYour answer here: "))
     # user input for the main info
-    usr_valName = str(input("\n\nFull Name: ")); key_ID.append(usr_valName)
-    usr_valAge = int(input("\nYour Age: ")); key_ID.append(usr_valAge)
-    usr_valGender = str(input("\nYour Sex (M / F): ")); key_ID.append(usr_valGender)
-    usr_valVac = int(input("\nCOVID-19 Vaccination Status: ")); key_ID.append(usr_valVac)
-    usr_valRate = str(input("\nComorbidity: ")); key_ID.append(usr_valRate)
-    personalData["dataBase1"] = {} # this function increments a new database dictionary inside the personalData main dictionary
-    print(personalData)
+    usr_valName = str(input("\n\nFull Name: ")); 
+    usr_valAge = int(input("\nYour Age: ")); 
+    usr_valSex = str(input("\nYour Sex (M / F): ")); 
+    usr_valVac = str(input("\nCOVID-19 Vaccination Status: ")); 
+    usr_valRate = str(input("\nComorbidity: "))
+    # this function increments a new database dictionary inside the personalData main dictionary
+    personalData[key_ID] = {f"Full Name" : {usr_valName}, "Age" : {usr_valAge}, "Sex" : {usr_valSex}, "COVID-19 Vaccination Status" : {usr_valVac}, "Comorbidity" : {usr_valRate}}
+    print("Your Contact-Tracing Information has been saved.") # program nested dictionary is now updated, appended, and is working.
+    print("\nHere's a brief summary of your input")
