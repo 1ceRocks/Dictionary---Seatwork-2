@@ -19,14 +19,19 @@
 # - Record a demo presenting your program
 # - Send the demo or link of demo directly to my messenger
 
+#importing library for implementing additional features to the program
+import os
+
 # first and foremost, let's make a dictionary list for creating a stored value data within user input for back-end programming.
 personalData = {
     "dataBase" : {} # for search (2 - option) reference
 }
 
 #next, of course, we want to make a display menu of options using print()
+os.system("cls")
 print("Your Dictionary List")
 print("Selection Menu")
 print("1 -> Add an item")
 print("2 -> Search")
 print("3 -> Exit (y/n)")
+os.system("cls")
