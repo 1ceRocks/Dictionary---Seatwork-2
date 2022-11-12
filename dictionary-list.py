@@ -22,36 +22,41 @@
 # importing library for implementing additional features to the program
 import os
 
-# first and foremost, let's make a dictionary list for creating a stored value data within user input for back-end programming.
-personalData = {
+os.system("cls")
+usr_Input = int(input("What program menu do you want to do? (1 / 2 / 3)\n\nYour answer here: ")) # this would be the user-input for selecting between 1 , 2 , or 3.
+while True: #re-arranged the program with the while loop scenario (implementing option [3])
+    os.system("cls")
+    print("Your Dictionary List")
+    print("Selection Menu")
+    print("1 -> Add an item")
+    print("2 -> Search")
+    print("3 -> Exit (y/n)")
+    personalData = {
     "dataBase" : {
         "Full Name" : "IceRocks", 
         "Age" : 20, "Gender" : "M", 
         "Address" : "Manila, Philippines"
-    } # random stored data for search (2 - option) labeled as reference
-}
-
-# next, of course, we want to make a display menu of options using print()
-os.system("cls")
-print("Your Dictionary List")
-print("Selection Menu")
-print("1 -> Add an item")
-print("2 -> Search")
-print("3 -> Exit (y/n)")
-
-# let's now create the user-input program interface
-os.system("cls")
-usr_Input = int(input("What program menu do you want to do? (1 / 2 / 3)\n\nYour answer here: ")) # this would be the user-input for selecting between 1 , 2 , or 3.
-if usr_Input == 1:
-    print("Selecting No.1 would automatically create a new database for you stored on the main personalData - Contact Tracing")
-    key_ID = str(input("Enter your name to be used as data storage (dictionary)\n\nYour answer here: "))
-    # user input for the main info
-    usr_valName = str(input("\n\nFull Name: ")); 
-    usr_valAge = int(input("\nYour Age: ")); 
-    usr_valSex = str(input("\nYour Sex (M / F): ")); 
-    usr_valVac = str(input("\nCOVID-19 Vaccination Status: ")); 
-    usr_valRate = str(input("\nComorbidity: "))
-    # this function increments a new database dictionary inside the personalData main dictionary
-    personalData[key_ID] = {f"Full Name" : {usr_valName}, "Age" : {usr_valAge}, "Sex" : {usr_valSex}, "COVID-19 Vaccination Status" : {usr_valVac}, "Comorbidity" : {usr_valRate}}
-    print("Your Contact-Tracing Information has been saved.") # program nested dictionary is now updated, appended, and is working.
+        }   # random stored data for search (2 - option) labeled as reference
+    }  
     print("\nHere's a brief summary of your input")
+    print(personalData)
+    print(personalData[key_ID]["Full Name"])
+    if usr_Input == 1:
+        print("Selecting No.1 would automatically create a new database for you stored on the main personalData - Contact Tracing")
+        key_ID = str(input("Enter the name to be used as data storage (dictionary)\n\nYour answer here: "))
+        # user input for the main info
+        usr_valName = str(input("\n\nFull Name: ")) 
+        usr_valSex = str(input("\nYour Sex (M / F): ")) 
+        usr_valBD = str(input("\nYour Birthday (mm/dd/yyyy): "))
+        usr_valAge = int(input("\nYour Age: "))
+        usr_valAdd = str(input("\nYour Address: "))
+        usr_valPN = int(input("\nYour Phone Number: "))
+        usr_valEA = str(input("\nYour E-Mail Address: "))
+        usr_valCS = str(input("\nYour Nationality: "))
+        usr_valNN = str(input("\nYour Civil Status: "))
+        usr_valVac = str(input("\nCOVID-19 Vaccination Status: "))
+        usr_valRate = str(input("\nComorbidity: "))
+        # this function increments a new database dictionary inside the personalData main dictionary
+        personalData[key_ID] = {f"Full Name" : usr_valName, "Sex" : usr_valSex, "BD" : usr_valBD, "Age" : usr_valAge, "Sex" : usr_valSex, "Address" : usr_valAdd, "Phone Number" : usr_valPN, "E-Mail Address" : usr_valEA, "Civil Status" : usr_valCS, "Nationality" : usr_valNN, "COVID-19 Vaccination Status" : usr_valVac, "Comorbidity" : usr_valRate}
+        # program nested dictionary is now updated, appended, and is working.
+        print("Your Contact-Tracing Information has been saved.")
