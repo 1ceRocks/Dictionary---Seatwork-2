@@ -43,5 +43,5 @@ if usr_Input == 1:
     personalData["dataBase1"] = {} # this function increments a new database dictionary inside the personalData main dictionary
     usr_key = input("Label your type of info down below\n\nYour info here: ")
     usr_value = input("Type your data here that you want to store\n\nYour answer here: ")
-    personalData["dataBase1"] = {usr_key : usr_value}
+    personalData["dataBase1"] = {dict[usr_key] = usr_value} # program to be fixed
     print(personalData)
