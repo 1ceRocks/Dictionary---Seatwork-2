@@ -24,7 +24,11 @@ import os
 
 # first and foremost, let's make a dictionary list for creating a stored value data within user input for back-end programming.
 personalData = {
-    "dataBase" : {"Full Name" : "IceRocks", "Age" : 20, "Gender" : "M", "Address" : "Manila, Philippines"} # random stored data for search (2 - option) labeled as reference
+    "dataBase" : {
+        "Full Name" : "IceRocks", 
+        "Age" : 20, "Gender" : "M", 
+        "Address" : "Manila, Philippines"
+    } # random stored data for search (2 - option) labeled as reference
 }
 
 # next, of course, we want to make a display menu of options using print()
@@ -42,7 +46,11 @@ if usr_Input == 1:
     print("Selecting No.1 would automatically create a new database for you stored on the main personalData - Contact Tracing")
     key_ID = input("Enter your name to be used as data storage (dictionary)\n\nYour answer here: ")
     key_ID = [] # Empty list for indexing parameters to be used in nested dictionary
-    usr_valName = input("Type your Full Name down below\n\nYour input: "); key_ID.append(usr_valName)
-    usr_valAge = input("Type your Full Name down below\n\nYour input: "); key_ID.append(usr_valAge)
+    # user input for the main info
+    usr_valName = str(input("\n\nFull Name: ")); key_ID.append(usr_valName)
+    usr_valAge = int(input("\nYour Age: ")); key_ID.append(usr_valAge)
+    usr_valGender = str(input("\nYour Sex (M / F): ")); key_ID.append(usr_valGender)
+    usr_valVac = int(input("\nCOVID-19 Vaccination Status: ")); key_ID.append(usr_valVac)
+    usr_valRate = str(input("\nComorbidity: ")); key_ID.append(usr_valRate)
     personalData["dataBase1"] = {} # this function increments a new database dictionary inside the personalData main dictionary
     print(personalData)
